@@ -5,7 +5,7 @@ const SCAN_PREFIX = "scan:";
 // ---- Backend URLs ----
 const LOCAL_BACKEND = "http://127.0.0.1:8000/score";
 const HF_BACKEND = "https://mcp-1st-birthday--data-guardian.hf.space/score";
-const CLOUD_BACKEND = "https://dp8187770--data-guardian-backend-fastapi-app.modal.run/score";
+const CLOUD_BACKEND = "https://username--data-guardian-backend-fastapi-app.modal.run/score";
 
 // ---- UI Helpers ----
 function scoreToBand(score) {
@@ -161,3 +161,4 @@ async function loadForActiveTab() {
 }
 
 document.addEventListener("DOMContentLoaded", loadForActiveTab);
+
