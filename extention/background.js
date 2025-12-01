@@ -257,3 +257,4 @@ chrome.alarms.onAlarm.addListener((a) => {
 });
 
 console.log("[DG] Background worker ready");
+
