@@ -96,24 +96,25 @@ Agent (Python)
 ```
 data-guardian/
 │
-├── extension/
-│   ├── manifest.json           # Extension configuration
-│   ├── background.js            # Network monitoring
-│   ├── content_script.js        # DOM scanning
-│   ├── popup.html               # Extension UI
-│   ├── popup.js                 # UI logic
-│   ├── icons/                   # Extension icons
-│   └── blocklist.txt            # Tracker blocklist
+├── extension/                      # Chrome Extension (Main Product)
+│   ├── manifest.json               # Extension configuration (MV3)
+│   ├── background.js               # Network monitoring + blocklist matching
+│   ├── content_script.js           # DOM scanning + fingerprint detection
+│   ├── popup.html                  # Extension UI
+│   ├── popup.js                    # UI logic + backend communication
+│   ├── blocklist.txt               # Auto-generated tracker blocklist (~5K entries)
+│   └── icons/                      # Extension icons (16/48/128px)
 │
-├── backend/
-│   ├── app.py                   # FastAPI server
-│   └── scoring.py               # Risk scoring engine
+├── backend/                        # Local FastAPI Backend (Optional)
+│   ├── app.py                      # /score endpoint (risk scoring API)
+│   ├── scoring.py                  # Risk scoring engine
+│   └── requirements.txt            # Python dependencies
 │
-├── agent/
-│   ├── compress_blocklist.py    # Blocklist updater
-│   └── autofix_agent.py         # (Optional) Auto-fix utility
+├── agent/                          # Blocklist Updater Agent
+│   └── compress_blocklist.py       # Fetches & merges EasyPrivacy + Disconnect
 │
-└── README.md
+└── README.md                       # Documentation
+
 ```
 
 ---
